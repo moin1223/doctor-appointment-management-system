@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #000080;
+    --secondary-color: #DAA520;
+    --primary-bg: hwb(240 94% 2%);
+    --text-grey: #8390A2;
+    --text-white: #ffffff;
+}
+
+/* .primary-text {
+    color: var(--primary-color)
+}
+
+.secondary-text {
+    color: var(--second-text-color)
+}
+
+.white-text {
+    color: var(--text-white);
+}
+
+.grey-text {
+    color: var(--text-grey);
+}
+
+.second-text {
+    color: var(--second-text-color);
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary-bg)
+}
+
+.user-table {
+    background: var(--text-white);
+    padding: 40px;
+
+}
+
+.table-title {
+    color: var(--secondary-color);
+}
+
+.user-table .create-user {
+    text-decoration: none;
+    background: var(--primary-color);
+    color: var(--text-white);
+    padding: 10px 20px;
+}
+
+.action-icons button {
+    border: none;
+    margin-left: 5px;
+}
+
+.action-icons a i {
+    font-size: 15px;
+}
+
+.edit {
+    color: #5A79A5;
+
+}
+
+.delete {
+    color: #CE0000;
+}
+
+.show {
+    color: #00d25b;
+}
+
+/* button */
+.dim_button {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 6px;
+    background: rgb(57, 85, 136);
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+  } 
+  .createSegment a { 
+    margin-bottom: 0px;
+    border-radius: 50px;
+    background: #ffffff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    transition: all .4s ease;
+  }
+  .createSegment a:hover, .createSegment a:focus {
+    transition: all .4s ease;
+    background: #007bff;
+    color: #fff;
+  }
+  /* mode */
+  .mode{
+    padding:4px 10px;
+    line-height: 13px;
+    color:#fff;
+    font-weight: 400;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    font-size:11px;
+    letter-spacing: 0.4px;
+  }
+  .mode_on{
+    background-color: #09922d;
+  }
+  .mode_off{
+    background-color: #8b9096;
+  }
+  .mode_process{
+    background-color: #ff8000;
+  }
+  .mode_done{
+    background-color: #03a9f3;
+  } 

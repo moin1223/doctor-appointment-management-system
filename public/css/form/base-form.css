@@ -1,0 +1,28 @@
+:root {
+    --primary-color: #000080;
+    --secondary-color: #DAA520;
+    --primary-bg: hwb(240 94% 2%);
+    --text-grey: #8390A2;
+    --text-white: #ffffff;
+}
+
+
+.custom-form {
+    background: var(--text-white);
+    padding: 40px;
+
+}
+
+.button {
+    background: var(--primary-color);
+    color: var(--text-white);
+    border-radius: 5px;
+    border: none;
+    padding: 8px 30px;
+}
+.profile-img{
+    object-fit: cover;
+    border-radius:50%;
+    width: 100px;
+    height: 100px;
+}

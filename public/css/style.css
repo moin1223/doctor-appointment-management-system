@@ -1,0 +1,150 @@
+:root {
+    --primary-color: #000080;
+    --secondary-color: #DAA520;
+    --primary-bg: hwb(240 94% 2%);
+    --text-grey: #8390A2;
+    --text-white: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: hwb(240 94% 2%);
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.text-grey {
+    color: var(--text-grey);
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+
+#wrapper {
+    overflow-x: hidden;
+
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+    background-color: var(--primary-color);
+}
+
+#sidebar-wrapper div {
+    color: var(--text-white);
+}
+
+#sidebar-wrapper div a {
+    color: var(--text-white);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+.header {
+    background: var(--text-white);
+
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
+}
+
+.nav-profile-img{
+    object-fit: cover;
+    border-radius:50%;
+    width: 40px;
+    height:40px;
+}
+
+
+
+/* sidebar-submenu-start */
+.sidebar-dropdown{
+    /* background-color: #DAA520; */
+    height: auto;
+}
+.sidebar-dropdown .dropdown-btn{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  .sidebar-dropdown .dropdown-container{
+   display: none;
+
+  }
+  .sidebar-dropdown .dropdown-container a{
+   padding-left: 60px;
+   background-color:var(--primary-color);
+   color: #ffffff;
+   /* padding-top: 10px; */
+
+  }
+
+
+/* sidebar-submenu-end*/
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
