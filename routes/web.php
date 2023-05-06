@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DoctorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
@@ -62,8 +63,8 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
         Route::get('/role-permissions/{id}', 'rolePermissions')->name('role-permissions');
         Route::get('/roles-permissions/{user_id}', 'rolesPermissions')->name('roles-permissions');
     });
-    //Company
-    Route::controller(CompanyController::class)->prefix('company')->name('company.')->group(function () {
+    //Doctor
+    Route::controller(DoctorController::class)->prefix('admin.doctor')->name('admin.doctor.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
@@ -72,15 +73,6 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
         Route::put('/{companyId}/update', 'update')->name('update');
         Route::delete('/{companyId}/delete', 'destroy')->name('destroy');
     });
-    //locations
-    Route::controller(LocationController::class)->prefix('location')->name('location.')->group(function () {
-        Route::get('/', 'index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/store', 'store')->name('store');
-        Route::get('/{locationId}/show', 'show')->name('show');
-        Route::get('/{locationId}/edit', 'edit')->name('edit');
-        Route::put('/{locationId}/update', 'update')->name('update');
-        Route::delete('/{packageId}/delete', 'destroy')->name('destroy');
-    });
+
 });
 

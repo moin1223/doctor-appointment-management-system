@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid px-4">
-    <div class="row g-3 my-2">
+    {{-- <div class="row g-3 my-2">
         <div class="col-md-3">
             <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                 <div>
@@ -42,8 +42,9 @@
                 <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
         </div>
-    </div>
-
+    </div> --}}
+    <h1 class="text-center mt-5 pt-5">Dashboard is comming soon!</h1>
+ 
 
 </div>
 @endsection
