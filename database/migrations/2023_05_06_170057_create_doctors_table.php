@@ -18,6 +18,7 @@ class CreateDoctorsTable extends Migration
             $table->string('name');
             $table->text('specialist');
             $table->string('mobile_number');
+            $table->longText('keyword')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

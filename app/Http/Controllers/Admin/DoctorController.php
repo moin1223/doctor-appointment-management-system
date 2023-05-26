@@ -32,6 +32,7 @@ class DoctorController extends Controller
             'name' => $request->name,
             'specialist' => $request->specialist,
             'mobile_number' => $request->mobile_number,
+            'keyword' => $request->keyword,
 
         ]);
         Alert::success('Doctor Created Successfully.');
@@ -58,6 +59,7 @@ class DoctorController extends Controller
             'name' => $request->name,
             'specialist' => $request->specialist,
             'mobile_number' => $request->mobile_number,
+            'keyword' => $request->keyword,
 
         ]);
         Alert::success('Doctor Updated Successfully.');
@@ -76,6 +78,19 @@ class DoctorController extends Controller
         $doctor->delete();
         return redirect()->route('admin.doctor.index');
     }
+// public function test()
+// {
+//     return response('Hello World', 200);
+// }
 
+public function filter(Request $request)
+{
+    // $keyword = $request->input('keyword');
+    $keyword = 'moin';
+
+    $filteredRecords = Doctor::where('keyword', 'like', '%' . $keyword . '%')->get();
+
+    return response()->json($filteredRecords);
+}
 
 }

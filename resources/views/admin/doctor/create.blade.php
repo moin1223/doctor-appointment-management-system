@@ -45,6 +45,16 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="col-md-8">
+                        <label class="form-label">keyword</label>
+                        <input type="text" name="keyword"
+                            class="form-control  @error('keyword') is-invalid @enderror" placeholder="keyword">
+                        @error('keyword')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                     <div class="col-12">
                         <button type="submit" class="button mt-2">Create</button>

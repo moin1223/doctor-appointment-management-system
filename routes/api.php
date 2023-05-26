@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\DoctorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// Route::get('/blogs', [BlogPostController::class, 'blogs']);
+Route::get('/filter', [DoctorController::class, 'filter']);
+

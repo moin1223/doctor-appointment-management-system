@@ -13,5 +13,6 @@ class Doctor extends Model
         'name',
         'specialist',
         'mobile_number',
+        'keyword',
     ];
 }
