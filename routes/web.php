@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\AppointmentControler;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +76,16 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
     });
 
 });
+
+  Route::controller(AppointmentControler::class)->group(function () {
+        Route::get('/ডাক্তার খুঁজুন', 'index')->name('find_doctor');
+        Route::post('/suggest_octor', 'suggestDoctor')->name('suggest_octor');
+        // Route::post('/store', 'store')->name('store');
+        // Route::get('/{companyId}/show', 'show')->name('show');
+        // Route::get('/{companyId}/edit', 'edit')->name('edit');
+        // Route::put('/{companyId}/update', 'update')->name('update');
+        // Route::delete('/{companyId}/delete', 'destroy')->name('destroy');
+    });
+
+
 

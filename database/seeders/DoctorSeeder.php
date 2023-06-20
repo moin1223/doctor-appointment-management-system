@@ -15,110 +15,46 @@ class DoctorSeeder extends Seeder
     public function run()
     {
         $doctors = array(
+            
             array(
-
-                'name' => 'Dr. Md. Aminul Islam ',
-                'specialist' => 'Cardiologist',
-                'mobile_number' => +8801711522425,
-        
+                'name' => 'ডঃ শেখ নাসির উদ্দিন',
+                'specialist' => 'অঙ্কনিক',
+                'mobile_number' => '+৮৮০১৭১১৯১৫৪০৭',
             ),
             array(
-
-                'name' => 'Dr. Farhana Ahmed',
-                'specialist' => 'Dermatologist',
-                'mobile_number' => +8801715016282,
-        
+                'name' => 'ডঃ মোহাম্মদ সাজ্জাদ হোসেন',
+                'specialist' => 'মনোরোগ বিশেষজ্ঞ',
+                'mobile_number' => '+৮৮০১৭১৫০৪৪৯৪৫',
             ),
             array(
-
-                'name' => 'Dr. Md. Monirul Islam',
-                'specialist' => 'Neurologist',
-                'mobile_number' => +8801819427380,
-        
+                'name' => 'ডঃ মাহবুব উর রশীদ',
+                'specialist' => 'কার্ডিওলজিস্ট',
+                'mobile_number' => '+৮৮০১৭১২৩৪৫৬৭৮',
             ),
             array(
-
-                'name' => 'Dr. Shaikh Nasir Uddin',
-                'specialist' => 'Oncologist',
-                'mobile_number' => +8801711915407,
-        
+                'name' => 'ডঃ মোহাম্মদ ইব্রাহিম',
+                'specialist' => 'গাইনিকোলজিস্ট',
+                'mobile_number' => '+৮৮০১৭১২৩৪৫৬৭৮',
             ),
             array(
-
-                'name' => 'Dr. Mohammad Sazzad Hossain',
-                'specialist' => 'Psychiatrist',
-                'mobile_number' => +8801715044945,
-        
+                'name' => 'ডঃ আহমেদ সাকিব',
+                'specialist' => 'কার্ডিওলজিস্ট',
+                'mobile_number' => '+৮৮০১৭১২৩৪৫৬৭৮',
             ),
             array(
-
-                'name' => 'Dr. Mohammad Ali',
-                'specialist' => 'Orthopedic Surgeon',
-                'mobile_number' => +8801713079596,
-        
+                'name' => 'ডঃ মাহবুবান রহমান',
+                'specialist' => 'নিউরোলজিস্ট',
+                'mobile_number' => '+৮৮০১৭১২৩৪৫৬৭৮',
             ),
             array(
-
-                'name' => 'Dr. Nasima Akter',
-                'specialist' => 'Gynecologist',
-                'mobile_number' => +8801711743522,
-        
+                'name' => 'ডঃ রিফাত আহমেদ',
+                'specialist' => 'কিডনি রোগ বিশেষজ্ঞ',
+                'mobile_number' => '+৮৮০১৭১২৩৪৫৬৭৮',
             ),
             array(
-
-                'name' => 'Dr. Nazrul Islam',
-                'specialist' => 'Endocrinologist',
-                'mobile_number' => +8801711521162,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Abdullah Al Mamun',
-                'specialist' => 'Ophthalmologist',
-                'mobile_number' => +8801819412361,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Tania Sultana',
-                'specialist' => 'Pediatrician',
-                'mobile_number' => +8801715004944,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Abu Zafor Md. Salahuddin',
-                'specialist' => 'Urologist',
-                'mobile_number' => +8801711521437,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Mohammed Hossain',
-                'specialist' => 'Gastroenterologist',
-                'mobile_number' => +8801711520809,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Firoz Ahmed',
-                'specialist' => 'ENT Specialist',
-                'mobile_number' => +8801819440020,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Md. Sadequr Rahman',
-                'specialist' => 'Pulmonologist',
-                'mobile_number' => +8801711521924,
-        
-            ),
-            array(
-
-                'name' => 'Dr. Mahbubur Rahman',
-                'specialist' => 'Nephrologist',
-                'mobile_number' => +8801711521801,
-        
+                'name' => 'ডঃ আলিমুল হক',
+                'specialist' => 'ব্রেস্ট সার্জন',
+                'mobile_number' => '+৮৮০১৭১২৩',
             ),
 
 
