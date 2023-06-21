@@ -14,5 +14,7 @@ class Doctor extends Model
         'specialist',
         'mobile_number',
         'keyword',
+        'schedule_1',
+        'schedule_2',
     ];
 }

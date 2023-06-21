@@ -50,25 +50,22 @@
   </style>
 </head>
 <body>
-  <h3 class="text-center mt-5">ডাক্তার খুজুন</h3>
+  <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
   <div class="form-container mt-4">
-    <form class="myForm" id="voiceForm" method="Get" action="{{ route('find_doctor') }}">
+    <form class="myForm" id="voiceForm" method="Get" action="{{ route('check.serial.number') }}">
       <div class="form-group">
-        <label for="name">আপনার সমস্যাটি বলুন</label>
-        <input class="myInput" type="text" id="name" name="name" placeholder="আপনার সমস্যাটি বলুন" required>
+        <label for="name">আপনার মোবাইল নাম্বারটা বলুন</label>
+        <input class="myInput" type="text" id="name" name="name" placeholder="আপনার মোবাইল নাম্বার দিন" required>
       </div>
       <button class="bg-light" type="submit" class="submit-btn mt-5"></button>
     </form>
   </div>
-  <div class="container">
+  {{-- <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-11 user-table mb-5">
             <div class="d-flex justify-content-between">
-                <h4 class="text-center">ডাক্তারদের তালিকা</h4>
-                {{-- <div class="createSegment">
-                    <a class="btn dim_button create_new" href="{{ route('role.create') }}"> <i
-                            class="fa-regular fa-plus"></i> Create New</a>
-                </div> --}}
+                <h4 class="text-center">সিরিয়ালের তালিকা</h4>
+  
 
 
             </div>
@@ -76,9 +73,9 @@
                         <thead class="table-head">
                             <tr class="text-center">
                               <th class="p-3" scope="col">ক্রমিক নাম্বার</th>
-                              <th class="p-3" scope="col">নাম</th>
-                              <th class="p-3" scope="col">বিশেষজ্ঞ</th>
-                              <th class="p-3" scope="col">মোবাইল নাম্বার</th>
+                              <th class="p-3" scope="col">রোগীর নাম</th>
+                              <th class="p-3" scope="col">রোগীর মোবাইল নাম্বার</th>
+                              <th class="p-3" scope="col">সিরিয়াল নাম্বার</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -97,7 +94,7 @@
             </table>
         </div>
     </div>
-</div>
+</div> --}}
 
   <script>
     const nameInput = document.getElementById('name');
