@@ -24,7 +24,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
       
 require __DIR__.'/auth.php';
 Route::prefix('admin')->middleware('role:admin')->group(function(){
@@ -78,8 +79,9 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
 });
 
   Route::controller(AppointmentControler::class)->group(function () {
-        Route::get('/ডাক্তার খুঁজুন', 'index')->name('find_doctor');
-        Route::post('/suggest_octor', 'suggestDoctor')->name('suggest_octor');
+        Route::get('/ডাক্তার-খুঁজুন', 'index')->name('find_doctor');
+        // Route::post('/suggest_octor', 'suggestDoctor')->name('suggest_octor');
+        Route::post('/suggest-octor', 'suggestDoctor')->name('voice.input');
         // Route::post('/store', 'store')->name('store');
         // Route::get('/{companyId}/show', 'show')->name('show');
         // Route::get('/{companyId}/edit', 'edit')->name('edit');
