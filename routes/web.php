@@ -80,9 +80,9 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
 
   Route::controller(AppointmentControler::class)->group(function () {
         Route::get('/ডাক্তার-খুঁজুন', 'index')->name('find_doctor');
-        // Route::post('/suggest_octor', 'suggestDoctor')->name('suggest_octor');
-        Route::post('/suggest-octor', 'suggestDoctor')->name('voice.input');
-        // Route::post('/store', 'store')->name('store');
+        Route::get('/অ্যাপোয়েন্টমেন্ট-বুক-করুন/{doctorId}', 'bookAppointment')->name('appointment.book');
+        Route::post('appoinment-book-store', 'bookAppointmentStore')->name('appointment.book.store');
+        Route::get('/সিরিয়াল-নাম্বার-দেখা', 'checkSerialNumber')->name('check.serial.number');
         // Route::get('/{companyId}/show', 'show')->name('show');
         // Route::get('/{companyId}/edit', 'edit')->name('edit');
         // Route::put('/{companyId}/update', 'update')->name('update');
