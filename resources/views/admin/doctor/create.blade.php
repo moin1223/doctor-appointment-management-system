@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-md-8">
                         <label class="form-label">Mobile Number</label>
-                        <input type="number" name="mobile_number"
+                        <input type="text" name="mobile_number"
                             class="form-control  @error('mobile_number') is-invalid @enderror" placeholder="Mobile Number">
                         @error('mobile_number')
                             <span class="invalid-feedback" role="alert">
