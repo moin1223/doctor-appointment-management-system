@@ -37,9 +37,9 @@
                         @enderror
                     </div>
                     <div class="col-md-8">
-                        <label class="form-label">Mobilen Nmber</label>
-                        <input type="number" name="mobile_number" value="{{ $dataItem->mobile_number }}"
-                            class="form-control  @error('mobile_number') is-invalid @enderror">
+                        <label class="form-label">Mobilen Number</label>
+                        <input type="text" name="mobile_number" value="{{ $dataItem->mobile_number }}" 
+                            class="form-control  @error('mobile_number') is-invalid @enderror" placeholder="schedule-1">
                         @error('mobile_number')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -47,7 +47,27 @@
                         @enderror
                     </div>
                     <div class="col-md-8">
-                        <label class="form-label">Mobilen Nmber</label>
+                        <label class="form-label">Schedule-1</label>
+                        <input type="text" name="schedule_1" value="{{ $dataItem->schedule_1 }}" 
+                            class="form-control  @error('schedule_1') is-invalid @enderror" placeholder="schedule-1">
+                        @error('schedule_1')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Schedule-2</label>
+                        <input type="text" name="schedule_2"  value="{{ $dataItem->schedule_2 }}" 
+                            class="form-control  @error('schedule_2') is-invalid @enderror" placeholder="schedule-2">
+                        @error('schedule_2')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Keyword </label>
                         <input type="text" name="keyword" value="{{ $dataItem->keyword }}"
                             class="form-control  @error('keyword') is-invalid @enderror">
                         @error('keyword')

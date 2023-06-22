@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Permission;
 use App\Models\Role;
 use App\Http\Requests\Role\RoleFormRequest;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\DoctorFormRequest;
 class DoctorController extends Controller
 {
 
@@ -24,7 +25,7 @@ class DoctorController extends Controller
         return view('admin.doctor.create');
     }
 
-    public function store(Request $request)
+    public function store(DoctorFormRequest $request)
     {
   
 
@@ -33,6 +34,8 @@ class DoctorController extends Controller
             'specialist' => $request->specialist,
             'mobile_number' => $request->mobile_number,
             'keyword' => $request->keyword,
+            'schedule_1' => $request->schedule_1,
+            'schedule_2' => $request->schedule_2,
 
         ]);
         Alert::success('Doctor Created Successfully.');
@@ -46,7 +49,7 @@ class DoctorController extends Controller
         return view('admin.doctor.edit', compact('dataItem'));
     }
 
-    public function update(Request $request, $id)
+    public function update(DoctorFormRequest $request, $id)
     {
 
         // $request->validate([
@@ -59,7 +62,10 @@ class DoctorController extends Controller
             'name' => $request->name,
             'specialist' => $request->specialist,
             'mobile_number' => $request->mobile_number,
+            'schedule_1' => $request->schedule_1,
+            'schedule_2' => $request->schedule_2,
             'keyword' => $request->keyword,
+
 
         ]);
         Alert::success('Doctor Updated Successfully.');

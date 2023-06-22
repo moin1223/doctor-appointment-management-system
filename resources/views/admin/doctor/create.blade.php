@@ -46,6 +46,26 @@
                         @enderror
                     </div>
                     <div class="col-md-8">
+                        <label class="form-label">Schedule-1</label>
+                        <input type="text" name="schedule_1"
+                            class="form-control  @error('schedule_1') is-invalid @enderror" placeholder="schedule-1">
+                        @error('schedule_1')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Schedule-2</label>
+                        <input type="text" name="schedule_2"
+                            class="form-control  @error('schedule_2') is-invalid @enderror" placeholder="schedule-2">
+                        @error('schedule_2')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="col-md-8">
                         <label class="form-label">keyword</label>
                         <input type="text" name="keyword"
                             class="form-control  @error('keyword') is-invalid @enderror" placeholder="keyword">
