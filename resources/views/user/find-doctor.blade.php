@@ -50,16 +50,22 @@
   </style>
 </head>
 <body>
-  <h3 class="text-center mt-5">ডাক্তার খুজুন</h3>
-  <div class="form-container mt-4">
-    <form class="myForm" id="voiceForm" method="Get" action="{{ route('find_doctor') }}">
-      <div class="form-group">
-        <label for="name">আপনার সমস্যাটি বলুন</label>
-        <input class="myInput" type="text" id="name" name="name" placeholder="আপনার সমস্যাটি বলুন" required>
-      </div>
-      <button class="bg-light" type="submit" class="submit-btn mt-5"></button>
-    </form>
+  <div class="p-4 text-right"> <!-- Add the "text-right" class to align the button to the right -->
+    <a class="btn  text-right btn-success" href="{{route('check.serial.number')}}">সিরিয়াল নাম্বার দেখুন</a>
   </div>
+    <div class="col-md-12">
+      <h3 class="text-center mt-5">ডাক্তার খুজুন</h3>
+      <div class="form-container mt-4">
+        <form class="myForm" id="voiceForm" method="Get" action="{{ route('find_doctor') }}">
+          <div class="form-group">
+            <label for="name">আপনার সমস্যাটি বলুন</label>
+            <input class="myInput" type="text" id="name" name="name" placeholder="আপনার সমস্যাটি বলুন" required>
+          </div>
+          <button class="d-none" type="submit" class="submit-btn mt-5"></button>
+        </form>
+      </div>
+    </div>
+
   <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-11 user-table mb-5">

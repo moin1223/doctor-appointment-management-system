@@ -19,6 +19,8 @@ class CreateAppointmentsTable extends Migration
             $table->string('mobile_number');
             $table->string('schedule');
             $table->foreignId('doctor_id');
+            $table->boolean('status')->default(0);
+            $table->string('serial_no')->nullable();
             $table->timestamps();
         });
     }

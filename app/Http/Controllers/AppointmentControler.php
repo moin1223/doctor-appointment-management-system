@@ -8,6 +8,42 @@ use App\Models\Appointment;
 use RealRashid\SweetAlert\Facades\Alert;
 class AppointmentControler extends Controller
 {
+    public function index1()
+    {
+        $requestedAppointments = Appointment:: with('doctor')-> where('status', 0)->paginate(10);
+        return view('admin.appointment.index', compact('requestedAppointments'));
+
+    }
+    public function create($appointmentId)
+    {
+        $requestedAppointment = Appointment::with('doctor')->findOrfail($appointmentId);
+        return view('admin.appointment.create', compact('requestedAppointment'));
+
+    }
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        $requestedAppointment = Appointment::findOrfail($request->appointment_id);
+        $requestedAppointment->update([
+         'serial_no' => $request->serial_no,
+         'status' =>1,
+        ]);
+        return redirect()->route('admin.appointment.index');
+
+    }
+    public function destroy($appointmentId)
+    {
+        $appointment = Appointment::findOrFail($appointmentId);
+        $appointment->delete();
+        return redirect()->route('admin.appointment.index');
+    
+    }
+
+
+
+
+
+
     public function index(Request $request)
     {
     //     $contentData = User::where('is_grapherbook_user', false)
@@ -74,23 +110,15 @@ class AppointmentControler extends Controller
     }
     public function checkSerialNumber(Request $request)
     {
-    //     $contentData = User::where('is_grapherbook_user', false)
-    //     ->where(User::raw("CONCAT(first_name, ' ', last_name)"), 'like', '%' . $request->name . '%')
-    //     ->orderBy('id', 'desc')
-    //     ->paginate(config('pagination.paginate'))
-    //     ->appends($request->all());
-    // return view('admin.user.index', compact('contentData'));
-        // $doctors = Doctor:: all();
-        // dd($request->name);
-        $searchTerm = $request->name;
 
-        $keywords = explode(' ', $searchTerm);
-        
-        $doctors = Doctor::where(function ($query) use ($keywords) {
-            foreach ($keywords as $keyword) {
-                $query->orWhere('keyword', 'LIKE', '%' . $keyword . '%');
-            }
-        })->get();
-        return view('user.check-serial-number', compact('doctors'));
+     $serialNumbers = Appointment::with('doctor')->where('status', 1)
+
+         ->where('mobile_number', $request->mobile_number)->get();
+    //  $serialNumbers = Appointment::where('status', 1)->get();
+    //  dd($serialNumbers);
+
+         return view('user.check-serial-number',compact('serialNumbers'));
     }
+
+
 }
