@@ -39,6 +39,9 @@
   </style>
 </head>
 <body>
+  <div class="p-4">
+    <a href="{{route('find_doctor')}}" class="btn btn-success">Go To Home</a>
+  </div>
     <h3 class="text-center mt-5">নিচের তথ্যগুলো দিন</h3>
   <div class="form-container mt-4">
     <form class="myForm" id="voiceForm" method="POST" action="{{ route('appointment.book.store') }}">
@@ -46,11 +49,11 @@
       <input type="hidden" name="doctor_id" value="{{$doctor->id}}">
       <div class="form-group">
         <label for="name">নাম:</label>
-        <input type="text" id="name" name="patient_name" placeholder="আপনার নাম লিখুন" required>
+        <input type="text" id="name" name="patient_name" placeholder="আপনার নাম বলুন" required>
       </div>
       <div class="form-group">
         <label for="mobile">মোবাইল নম্বর:</label>
-        <input type="tel" id="mobile" name="mobile_number" placeholder="আপনার মোবাইল নম্বর লিখুন" required>
+        <input type="tel" id="mobile" name="mobile_number" placeholder="আপনার মোবাইল নম্বর বলুন" required>
       </div>
       <h6 class="mt-5">সময় নির্ধারণ করুন</h6>
       <div class="form-check">

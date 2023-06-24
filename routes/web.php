@@ -75,6 +75,14 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
         Route::put('/{companyId}/update', 'update')->name('update');
         Route::delete('/{companyId}/delete', 'destroy')->name('destroy');
     });
+    Route::controller(AppointmentControler::class)->prefix('admin.appointment')->name('admin.appointment.')->group(function () {
+        Route::get('/index', 'index1')->name('index');
+        Route::get('/{appointmentId}/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/{appointmentId}/edit', 'edit')->name('edit');
+        Route::put('/{appointmentId}/update', 'update')->name('update');
+        Route::delete('/{appointmentId}/delete', 'destroy')->name('destroy');
+    });
 
 });
 
@@ -82,7 +90,7 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
         Route::get('/ডাক্তার-খুঁজুন', 'index')->name('find_doctor');
         Route::get('/অ্যাপোয়েন্টমেন্ট-বুক-করুন/{doctorId}', 'bookAppointment')->name('appointment.book');
         Route::post('appoinment-book-store', 'bookAppointmentStore')->name('appointment.book.store');
-        Route::get('/সিরিয়াল-নাম্বার-দেখা', 'checkSerialNumber')->name('check.serial.number');
+        Route::get('/সিরিয়াল-নাম্বার-দেখুন', 'checkSerialNumber')->name('check.serial.number');
         // Route::get('/{companyId}/show', 'show')->name('show');
         // Route::get('/{companyId}/edit', 'edit')->name('edit');
         // Route::put('/{companyId}/update', 'update')->name('update');

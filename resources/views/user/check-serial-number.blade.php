@@ -50,7 +50,11 @@
   </style>
 </head>
 <body>
-  <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
+  <div class="p-4">
+    <a href="{{route('find_doctor')}}" class="btn btn-success">Go To Home</a>
+  </div>
+
+  {{-- <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
   <div class="form-container mt-4">
     <form class="myForm" id="voiceForm" method="Get" action="{{ route('check.serial.number') }}">
       <div class="form-group">
@@ -59,7 +63,29 @@
       </div>
       <button class="bg-light" type="submit" class="submit-btn mt-5"></button>
     </form>
-  </div>
+  </div> --}}
+  <div class="col-md-12">
+    <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
+    <div class="form-container mt-4">
+      <form class="myForm" id="voiceForm" method="Get" action="{{ route('check.serial.number') }}">
+        <div class="form-group">
+          <label for="name">আপনার মোবাইল নাম্বারটা বলুন</label>
+          <input class="myInput" type="text" id="name" name="mobile_number" placeholder="আপনার মোবাইল নাম্বারটা বলুন" required>
+        </div>
+        <button class="d-none" type="submit" class="submit-btn mt-5"></button>
+      </form>
+      @isset($serialNumbers)
+@forelse($serialNumbers as $serialNumber)
+<div>
+  <p>ডাক্তারের নাম:{{$serialNumber->doctor->name}}</p>
+  <p>সিরিয়াল নাম্বার:{{$serialNumber->serial_no}}</p>
+</div>
+   @empty
+   {{-- <h1>xdhgdhdgd</h1> --}}
+   @endforelse
+@endisset
+
+    </div>
   {{-- <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-11 user-table mb-5">
