@@ -3,17 +3,16 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300&display=swap"rel="stylesheet">
-  <!------- sweetalert ------>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300&display=swap" rel="stylesheet">
+  <!-- sweetalert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
-  <!-------- select2 js ---- -->
+  <!-- select2 js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
       integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/b121968cc9.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href={{ asset('css/style.css') }}>
-  <link rel="stylesheet" href={{ asset('css/table/base-table.css') }}>
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/table/base-table.css') }}">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <title>Voice Input Form (Bengali)</title>
   <style>
@@ -54,20 +53,10 @@
     <a href="{{route('find_doctor')}}" class="btn btn-success">Go To Home</a>
   </div>
 
-  {{-- <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
-  <div class="form-container mt-4">
-    <form class="myForm" id="voiceForm" method="Get" action="{{ route('check.serial.number') }}">
-      <div class="form-group">
-        <label for="name">আপনার মোবাইল নাম্বারটা বলুন</label>
-        <input class="myInput" type="text" id="name" name="name" placeholder="আপনার মোবাইল নাম্বার দিন" required>
-      </div>
-      <button class="bg-light" type="submit" class="submit-btn mt-5"></button>
-    </form>
-  </div> --}}
   <div class="col-md-12">
     <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
     <div class="form-container mt-4">
-      <form class="myForm" id="voiceForm" method="Get" action="{{ route('check.serial.number') }}">
+      <form class="myForm" id="voiceForm" method="GET" action="{{ route('check.serial.number') }}">
         <div class="form-group">
           <label for="name">আপনার মোবাইল নাম্বারটা বলুন</label>
           <input class="myInput" type="text" id="name" name="mobile_number" placeholder="আপনার মোবাইল নাম্বারটা বলুন" required>
@@ -75,58 +64,41 @@
         <button class="d-none" type="submit" class="submit-btn mt-5"></button>
       </form>
       @isset($serialNumbers)
-@forelse($serialNumbers as $serialNumber)
-<div>
-  <p>ডাক্তারের নাম:{{$serialNumber->doctor->name}}</p>
-  <p>সিরিয়াল নাম্বার:{{$serialNumber->serial_no}}</p>
-</div>
-   @empty
-   {{-- <h1>xdhgdhdgd</h1> --}}
-   @endforelse
-@endisset
-
+      @forelse($serialNumbers as $serialNumber)
+      <div>
+        <p>ডাক্তারের নাম:{{$serialNumber->doctor->name}}</p>
+        <p>সিরিয়াল নাম্বার:{{$serialNumber->serial_no}}</p>
+      </div>
+      @empty
+      {{-- <h1>xdhgdhdgd</h1> --}}
+      @endforelse
+      @endisset
     </div>
-  {{-- <div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-11 user-table mb-5">
-            <div class="d-flex justify-content-between">
-                <h4 class="text-center">সিরিয়ালের তালিকা</h4>
-  
-
-
-            </div>
-                    <table class="table mt-5 mb-5 table-borderless">
-                        <thead class="table-head">
-                            <tr class="text-center">
-                              <th class="p-3" scope="col">ক্রমিক নাম্বার</th>
-                              <th class="p-3" scope="col">রোগীর নাম</th>
-                              <th class="p-3" scope="col">রোগীর মোবাইল নাম্বার</th>
-                              <th class="p-3" scope="col">সিরিয়াল নাম্বার</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                    @foreach ( $doctors as $doctor)
-                    <tr class="text-center">
-                        <td class="p-3">{{$loop->index+1}}</td>
-                        <td class="p-3">{{$doctor->name}}</td>
-                        <td class="p-3">{{$doctor->specialist}}</td>
-                        <td class="p-3">{{$doctor->mobile_number}}</td>
-                        <td >
-                          <a class="btn btn-success btn-sm rounded-pill" href="{{ route('appointment.book', [$doctor->id]) }}">সিরিয়াল নিতে আগ্রহী</a>
-                      </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div> --}}
+  </div>
 
   <script>
     const nameInput = document.getElementById('name');
     const voiceForm = document.getElementById('voiceForm');
 
     nameInput.addEventListener('click', startSpeechRecognition);
+
+    function convertEnglishToBengaliNumber(number) {
+      const englishNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      const bengaliNumbers = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+      let convertedNumber = '';
+      for (let i = 0; i < number.length; i++) {
+        const char = number[i];
+        const index = englishNumbers.indexOf(char);
+        if (index !== -1) {
+          convertedNumber += bengaliNumbers[index];
+        } else {
+          convertedNumber += char;
+        }
+      }
+
+      return convertedNumber;
+    }
 
     function startSpeechRecognition(event) {
       const inputField = event.target;
@@ -135,7 +107,8 @@
 
       recognition.onresult = (event) => {
         const result = event.results[event.results.length - 1][0].transcript;
-        inputField.value = result;
+        const convertedResult = convertEnglishToBengaliNumber(result);
+        inputField.value = convertedResult;
         voiceForm.submit(); // Submit the form after setting the voice input value
       };
 
