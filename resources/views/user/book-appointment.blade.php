@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!------- sweetalert ------>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
     <title>Voice Input Form (Bengali)</title>
     <style>
+        body{
+            height: 100vh;
+        }
         .form-container {
             max-width: 500px;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 20px;
         }
 
         .form-group {
@@ -20,26 +25,27 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
 
         .form-group input {
             width: 100%;
             padding: 8px;
-            border-radius: 3px;
+            border-radius: 13px;
             border: 1px solid #ccc;
         }
-
         .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
+        display: block;
+        width: 70%;
+        margin: 0 auto; /* Center horizontally */
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -47,7 +53,7 @@
     <a href="{{ route('find_doctor') }}" class="btn btn-success">Go To Home</a>
 </div>
 <h3 class="text-center mt-5">নিচের তথ্যগুলো দিন</h3>
-<div class="form-container mt-4">
+<div class="form-container mt-4" style="background-image: url('{{ asset('images/medical.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <form class="myForm" id="voiceForm" method="POST" action="{{ route('appointment.book.store') }}">
         @csrf
         <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
@@ -75,6 +81,39 @@
         <button type="submit" class="submit-btn mt-5">সাবমিট করুন</button>
     </form>
 </div>
+<br>
+<footer class="bg-dark text-white text-center py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>যোগাযোগ করুন</h5>
+        <p>ঠিকানা: চট্টগ্রাম মেডিকেল, 57 K.B. Fazlul Kader Rd, চট্টগ্রাম 4203</p>
+        <p>মোবাইল: 01873813517</p>
+      </div>
+      <div class="col-md-4">
+        <h5>সামাজিক যোগাযোগ</h5>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/khaledbin.islam.545" target="_blank">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="mailto:khaledrayan40@gmail.com" target="khaledrayan40@gmail.com">
+              <i class="fas fa-envelope fa-2x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>বিশেষ ধন্যবাদ</h5>
+        <p>ডাক্তার রেকমেন্ডেশন ও অ্যাপয়েন্টমেন্ট সিস্টেম</p>
+        <span>2023</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 <script>
     function convertEnglishToBengaliNumber(number) {
