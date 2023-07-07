@@ -88,9 +88,12 @@ Route::prefix('admin')->middleware('role:admin')->group(function(){
 
   Route::controller(AppointmentControler::class)->group(function () {
         Route::get('/ডাক্তার-খুঁজুন', 'index')->name('find_doctor');
+        Route::post('/ডাক্তারদের-তালিকা-সমূহ', 'doctorPost')->name('find_doctors');
         Route::get('/অ্যাপোয়েন্টমেন্ট-বুক-করুন/{doctorId}', 'bookAppointment')->name('appointment.book');
         Route::post('appoinment-book-store', 'bookAppointmentStore')->name('appointment.book.store');
         Route::get('/সিরিয়াল-নাম্বার-দেখুন', 'checkSerialNumber')->name('check.serial.number');
+        Route::get('/ডাক্তারদের-তালিকা', 'doctorList')->name('doctor.list');
+
         // Route::get('/{companyId}/show', 'show')->name('show');
         // Route::get('/{companyId}/edit', 'edit')->name('edit');
         // Route::put('/{companyId}/update', 'update')->name('update');

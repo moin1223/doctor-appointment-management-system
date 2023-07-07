@@ -44,28 +44,32 @@ class AppointmentControler extends Controller
 
 
 
-    public function index(Request $request)
+    public function index()
     {
-    //     $contentData = User::where('is_grapherbook_user', false)
-    //     ->where(User::raw("CONCAT(first_name, ' ', last_name)"), 'like', '%' . $request->name . '%')
-    //     ->orderBy('id', 'desc')
-    //     ->paginate(config('pagination.paginate'))
-    //     ->appends($request->all());
-    // return view('admin.user.index', compact('contentData'));
-        // $doctors = Doctor:: all();
-        // dd($request->name);
-        $searchTerm = $request->name;
 
-        $keywords = explode(' ', $searchTerm);
+            return view('user.find-doctor');
+
+        }
+        public function doctorPost(Request $request)
+        {
+            $searchTerm = $request->name;
+            $keywords = explode(' ', $searchTerm);
         
-        $doctors = Doctor::where(function ($query) use ($keywords) {
-            foreach ($keywords as $keyword) {
-                $query->orWhere('keyword', 'LIKE', '%' . $keyword . '%');
+            if (!empty($keywords)) {
+                $doctors = Doctor::where(function ($query) use ($keywords) {
+                    foreach ($keywords as $keyword) {
+                        $query->orWhere('keyword', 'LIKE', '%' . $keyword . '%');
+                    }
+                })->paginate(10);
+        
+                if ($doctors->isNotEmpty()) {
+                    return view('user.doctor', compact('doctors'));
+                }
             }
-        })->get();
-     
-        return view('user.find-doctor', compact('doctors'));
-    }
+        
+            return redirect()->route('find_doctor')->with('message', 'কোন ডাক্তার খুঁজে পাওয়া যায়নি');
+        }
+        
     public function suggestDoctor(Request $request)
     {
         
@@ -118,6 +122,13 @@ class AppointmentControler extends Controller
     //  dd($serialNumbers);
 
          return view('user.check-serial-number',compact('serialNumbers'));
+    }
+
+    public function doctorList()
+    {
+        $doctors = Doctor::orderBy('id', 'desc')
+        ->paginate(10);
+        return view('user.doctor', compact('doctors'));
     }
 
 

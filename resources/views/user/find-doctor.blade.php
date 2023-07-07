@@ -20,7 +20,6 @@
       max-width: 500px;
       margin: 0 auto;
       padding: 20px;
-      border: 1px solid #ccc;
       border-radius: 5px;
       
     }
@@ -66,30 +65,44 @@
 .dynamic-color:active {
   background-color: #e514b1; /* Change the color to your desired click color */
 }
+.footer-section{
+  margin-top: 50px;
+}
+.backgrund-img{
+  padding-top: 50px;
+  padding-bottom: 50px
+}
 
 
   </style>
 </head>
 <body>
-  <div style="background-image: url('{{ asset('images/rural.png') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
   <div class="p-4 text-right">
     <a class="btn text-right btn-success" href="{{route('check.serial.number')}}">সিরিয়াল নাম্বার দেখুন</a>
+    <a class="btn text-right btn-success" href="{{route('doctor.list')}}">ডাক্তারদের তালিকা</a>
   </div>
+  <div class="backgrund-img" style="background-image: url('{{ asset('images/rural.png') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
   <div class="col-md-12" >
     <h3 class="text-center search-doctor mt-5">ডাক্তার খুজুন</h3>
     <div class="form-container mt-4">
-      <form class="myForm" id="voiceForm" method="GET" action="{{ route('find_doctor') }}">
+      <form class="myForm" id="voiceForm" method="POST" action="{{ route('find_doctors') }}">
+        @csrf
         <div class="form-group">
           <label class="search-doctor" for="name">আপনার সমস্যাটি বলুন</label>
           <input class="myInput" type="text" id="name" name="name" placeholder="আপনার সমস্যাটি বলুন" required>
         </div>
         <button class="d-none" type="submit" class="submit-btn mt-5"></button>
       </form>
+      @if (session('message'))
+      <div class="alert alert-success message">
+          {{ session('message') }}
+      </div>
+  @endif
     </div>
   </div>
   </div>
 
-  <div class="container">
+  {{-- <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-11 user-table mb-5"  style="background-image: url('{{ asset('images/doctor.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
         <div class="d-flex justify-content-between">
@@ -121,9 +134,9 @@
         </table>
       </div>
     </div>
-  </div>
+  </div> --}}
 
-  <footer class="bg-dark text-white text-center py-4">
+  <footer class="bg-dark text-white text-center footer-section py-4">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
