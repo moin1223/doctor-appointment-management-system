@@ -70,9 +70,10 @@
 }
 .backgrund-img{
   padding-top: 50px;
-  padding-bottom: 50px
-}
+  padding-bottom: 50px;
+  height: 50vh;
 
+}  
 
   </style>
 </head>
@@ -97,46 +98,11 @@
       <div class="alert alert-success message">
           {{ session('message') }}
       </div>
-  @endif
+      @endif
     </div>
   </div>
   </div>
-
-  {{-- <div class="container">
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-11 user-table mb-5"  style="background-image: url('{{ asset('images/doctor.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <div class="d-flex justify-content-between">
-          <h4 class="text-center">ডাক্তারদের তালিকা</h4>
-        </div>
-        <table class="table mt-5 mb-5 table-borderless" >
-          <thead class="table-head">
-            <tr class="text-center">
-              <th class="p-3" scope="col">ক্রমিক নাম্বার</th>
-              <th class="p-3" scope="col">নাম</th>
-              <th class="p-3" scope="col">বিশেষজ্ঞ</th>
-              <th class="p-3" scope="col">মোবাইল নাম্বার</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach ($doctors as $doctor)
-            <tr class="text-center">
-              <td class="p-3">{{ $loop->index+1 }}</td>
-              <td class="p-3">{{ $doctor->name }}</td>
-              <td class="p-3">{{ $doctor->specialist }}</td>
-              <td class="p-3">{{ $doctor->mobile_number }}</td>
-              <td>
-               <a class="btn btn-success btn-sm rounded-pill dynamic-color" href="{{ route('appointment.book', [$doctor->id]) }}">সিরিয়াল নিতে আগ্রহী</a>
-
-              </td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div> --}}
-
-  <footer class="bg-dark text-white text-center footer-section py-4">
+  <footer class="bg-dark text-white text-center footer-section py-4 fixed-bottom">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
