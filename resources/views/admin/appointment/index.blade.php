@@ -3,7 +3,7 @@
     <!-- User_table -->
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-11 user-table">
+            <div class="col-md-11 user-table table-responsive">
                 <div class="d-flex justify-content-between">
                     <h4 class="text-dark">Requested Appointmnet</h4>
                     {{-- <div class="createSegment">
@@ -82,6 +82,6 @@
                 }
             })
         })
-    </script> --}}
+    </script>
 
-{{-- @append
+

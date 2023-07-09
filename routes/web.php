@@ -19,7 +19,7 @@ use App\Http\Controllers\AppointmentControler;
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return view('user.find-doctor');
 });
 
 Route::get('/dashboard', function () {

@@ -3,7 +3,7 @@
     <!-- User_table -->
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-11 user-table">
+            <div class="col-md-11 user-table table-responsive">
                 <div class="d-flex justify-content-between">
                     <h4 class="table-title">Users</h4>
                     {{-- <a class="create-user" href={{ route('user.create') }}>Create New User</a> --}}
@@ -20,7 +20,7 @@
                             <th class="p-3" scope="col">First Name</th>
                             <th class="p-3" scope="col">Last Name</th>
                             <th class="p-3" scope="col">Email</th>
-                            <th class="p-3" scope="col">Role</th>
+                            {{-- <th class="p-3" scope="col">Role</th> --}}
                             <th class="p-3" scope="col">Actions</th>            
                         </tr>
                     </thead>
@@ -31,10 +31,10 @@
                                 <td class="p-3">{{ $user->first_name }}</td>
                                 <td class="p-3">{{ $user->last_name }}</td>
                                 <td class="p-3">{{ $user->email }}</td>
-                                <td >
+                                {{-- <td >
                                     <a class="mode mode_off text-decoration-none link-light" href="{{ route('user.give-role',[$user->id]) }}">Give Role</a>
                                     
-                                </td>
+                                </td> --}}
                                 <td class="action-icons d-flex justify-content-center p-3">
                                     <a class="edit me-1" href="{{ route('user.edit', [$user->id]) }}"><i
                                             class="fa-solid fa-pen-to-square btn btn-primary"></i></a>

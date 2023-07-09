@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-md-11 user-table">
+            <div class="col-md-11 user-table table-responsive">
                 <div>
                     @if (session()->has('message'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
