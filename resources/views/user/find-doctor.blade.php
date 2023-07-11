@@ -102,7 +102,7 @@
       </div>
     </div>
   </div>
-  <footer class="bg-dark text-white text-center footer-section py-4 fixed-bottom">
+  <footer class="bg-dark text-white text-center footer-section py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4">

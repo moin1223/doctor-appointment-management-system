@@ -53,7 +53,7 @@
     </form>
 </div>
 <br>
-<footer class="bg-dark text-white text-center fixed-bottom">
+<footer class="bg-dark text-white text-center">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
