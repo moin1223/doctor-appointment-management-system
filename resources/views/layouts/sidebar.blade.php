@@ -51,7 +51,7 @@
                     {{-- <a class="list-group-item py-0" href="{{ route('admin.doctor.create') }}">Create</a> --}}
                 </div>
             </div>
-            <div class="sidebar-dropdown mt-3 mb-4">
+            {{-- <div class="sidebar-dropdown mt-3 mb-4">
                 <button class="dropdown-btn fw-bold ms-3">
                     <div class="d-flex justify-content-between">
                         <span>
@@ -65,8 +65,8 @@
                     <a class="list-group-item pt-3" href="{{ route('role.index') }}">List</a>
                     <a class="list-group-item py-0" href="{{ route('role.create') }}">Create</a>
                 </div>
-            </div>
-
+            </div> --}}
+{{-- 
             <div class="sidebar-dropdown mt-3 mb-4">
                 <button class="dropdown-btn fw-bold ms-3">
                     <div class="d-flex justify-content-between">
@@ -81,7 +81,7 @@
                     <a class="list-group-item pt-3" href="{{ route('permission.index') }}">List</a>
                     <a class="list-group-item py-0" href="{{ route('permission.create') }}">Create</a>
                 </div>
-            </div>
+            </div> --}}
         @endrole
 
     </div>

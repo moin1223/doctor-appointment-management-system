@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300&display=swap" rel="stylesheet">
@@ -46,6 +47,13 @@
       border-radius: 3px;
       cursor: pointer;
     }
+
+    @media (max-width: 576px) {
+      .form-container {
+        max-width: 100%;
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -53,7 +61,7 @@
     <a href="{{route('find_doctor')}}" class="btn btn-success">Go To Home</a>
   </div>
 
-  <div class="col-md-12">
+  <div class="container">
     <h3 class="text-center mt-5">সিরিয়াল নাম্বার দেখুন</h3>
     <div class="form-container mt-4">
       <form class="myForm" id="voiceForm" method="GET" action="{{ route('check.serial.number') }}">
@@ -75,6 +83,38 @@
       @endisset
     </div>
   </div>
+  <footer class="bg-dark text-white text-center footer-section py-4 fixed-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>যোগাযোগ করুন</h5>
+          <p>ঠিকানা: চট্টগ্রাম মেডিকেল, 57 K.B. Fazlul Kader Rd, চট্টগ্রাম 4203</p>
+          <p>মোবাইল: 01873813517</p>
+        </div>
+        <div class="col-md-4">
+          <h5>সামাজিক যোগাযোগ</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/khaledbin.islam.545" target="_blank">
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="mailto:khaledrayan40@gmail.com" target="khaledrayan40@gmail.com">
+                <i class="fas fa-envelope fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>বিশেষ ধন্যবাদ</h5>
+          <p>ডাক্তার রেকমেন্ডেশন ও অ্যাপয়েন্টমেন্ট সিস্টেম</p>
+          <span>2023</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 
   <script>
     const nameInput = document.getElementById('name');
