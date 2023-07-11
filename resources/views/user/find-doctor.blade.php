@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300&display=swap" rel="stylesheet">
@@ -21,7 +22,6 @@
       margin: 0 auto;
       padding: 20px;
       border-radius: 5px;
-      
     }
     .form-group {
       margin-bottom: 20px;
@@ -46,35 +46,31 @@
       border-radius: 3px;
       cursor: pointer;
     }
-    .search-doctor{
+    .search-doctor {
       color: #fff;
       font-weight: bold;
     }
-    .p-3{
+    .p-3 {
       font-weight: bold;
     }
     .dynamic-color {
-  transition: background-color 0.3s ease;
-}
-
-.dynamic-color:hover,
-.dynamic-color:focus {
-  background-color: #5ce8a7; /* Change the color to your desired hover color */
-}
-
-.dynamic-color:active {
-  background-color: #e514b1; /* Change the color to your desired click color */
-}
-.footer-section{
-  margin-top: 50px;
-}
-.backgrund-img{
-  padding-top: 50px;
-  padding-bottom: 50px;
-  height: 50vh;
-
-}  
-
+      transition: background-color 0.3s ease;
+    }
+    .dynamic-color:hover,
+    .dynamic-color:focus {
+      background-color: #5ce8a7; /* Change the color to your desired hover color */
+    }
+    .dynamic-color:active {
+      background-color: #e514b1; /* Change the color to your desired click color */
+    }
+    .footer-section {
+      margin-top: 50px;
+    }
+    .backgrund-img {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      height: 50vh;
+    }
   </style>
 </head>
 <body>
@@ -83,57 +79,60 @@
     <a class="btn text-right btn-success" href="{{route('doctor.list')}}">ডাক্তারদের তালিকা</a>
   </div>
   <div class="backgrund-img" style="background-image: url('{{ asset('images/rural.png') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-  <div class="col-md-12" >
-    <h3 class="text-center search-doctor mt-5">ডাক্তার খুজুন</h3>
-    <div class="form-container mt-4">
-      <form class="myForm" id="voiceForm" method="POST" action="{{ route('find_doctors') }}">
-        @csrf
-        <div class="form-group">
-          <label class="search-doctor" for="name">আপনার সমস্যাটি বলুন</label>
-          <input class="myInput" type="text" id="name" name="name" placeholder="আপনার সমস্যাটি বলুন" required>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <h3 class="text-center search-doctor mt-5">ডাক্তার খুজুন</h3>
+          <div class="form-container mt-4">
+            <form class="myForm" id="voiceForm" method="POST" action="{{ route('find_doctors') }}">
+              @csrf
+              <div class="form-group">
+                <label class="search-doctor" for="name">আপনার সমস্যাটি বলুন</label>
+                <input class="myInput form-control" type="text" id="name" name="name" placeholder="আপনার সমস্যাটি বলুন" required>
+              </div>
+              <button class="d-none" type="submit" class="submit-btn mt-5"></button>
+            </form>
+            @if (session('message'))
+            <div class="alert alert-success message">
+                {{ session('message') }}
+            </div>
+            @endif
+          </div>
         </div>
-        <button class="d-none" type="submit" class="submit-btn mt-5"></button>
-      </form>
-      @if (session('message'))
-      <div class="alert alert-success message">
-          {{ session('message') }}
       </div>
-      @endif
     </div>
-  </div>
   </div>
   <footer class="bg-dark text-white text-center footer-section py-4 fixed-bottom">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h5>যোগাযোগ করুন</h5>
-        <p>ঠিকানা: চট্টগ্রাম মেডিকেল, 57 K.B. Fazlul Kader Rd, চট্টগ্রাম 4203</p>
-        <p>মোবাইল: 01873813517</p>
-      </div>
-      <div class="col-md-4">
-        <h5>সামাজিক যোগাযোগ</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/khaledbin.islam.545" target="_blank">
-              <i class="fab fa-facebook fa-2x"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="mailto:khaledrayan40@gmail.com" target="khaledrayan40@gmail.com">
-              <i class="fas fa-envelope fa-2x"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5>বিশেষ ধন্যবাদ</h5>
-        <p>ডাক্তার রেকমেন্ডেশন ও অ্যাপয়েন্টমেন্ট সিস্টেম</p>
-        <span>2023</span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>যোগাযোগ করুন</h5>
+          <p>ঠিকানা: চট্টগ্রাম মেডিকেল, 57 K.B. Fazlul Kader Rd, চট্টগ্রাম 4203</p>
+          <p>মোবাইল: 01873813517</p>
+        </div>
+        <div class="col-md-4">
+          <h5>সামাজিক যোগাযোগ</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/khaledbin.islam.545" target="_blank">
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="mailto:khaledrayan40@gmail.com" target="khaledrayan40@gmail.com">
+                <i class="fas fa-envelope fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>বিশেষ ধন্যবাদ</h5>
+          <p>ডাক্তার রেকমেন্ডেশন ও অ্যাপয়েন্টমেন্ট সিস্টেম</p>
+          <span>2023</span>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 
   <script>
     const nameInput = document.getElementById('name');

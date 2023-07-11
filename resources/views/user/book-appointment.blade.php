@@ -1,69 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/your/custom.css">
     <!------- sweetalert ------>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
     <title>Voice Input Form (Bengali)</title>
     <style>
-        body{
-            height: 100vh;
-        }
         .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border-radius: 13px;
-            border: 1px solid #ccc;
-        }
-        .submit-btn {
-        display: block;
-        width: 70%;
-        margin: 0 auto; /* Center horizontally */
-        padding: 10px;
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        }
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
     </style>
 </head>
 <body>
 <div class="p-4">
     <a href="{{ route('find_doctor') }}" class="btn btn-success">Go To Home</a>
 </div>
-<h3 class="text-center mt-5">নিচের তথ্যগুলো দিন</h3>
-<div class="form-container mt-4" style="background-image: url('{{ asset('images/medical.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<h3 class="text-center mt-2">নিচের তথ্যগুলো দিন</h3>
+<div class="form-container" style="background-image: url('{{ asset('images/medical.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <form class="myForm" id="voiceForm" method="POST" action="{{ route('appointment.book.store') }}">
         @csrf
         <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
         <div class="form-group">
-            <label for="name">নাম:</label>
-            <input type="text" id="name" name="patient_name" placeholder="আপনার নাম বলুন" required>
+            <label for="exampleInputEmail1" class="form-label">নাম:</label>
+            <input class="form-control" type="text" id="name" name="patient_name" placeholder="নাম বলুন" required>
         </div>
-        <div class="form-group">
-            <label for="mobile">মোবাইল নম্বর:</label>
-            <input type="tel" id="mobile" name="mobile_number" placeholder="আপনার মোবাইল নম্বর বলুন" required>
+        <div class="form-group mt-3">
+            <label for="exampleInputEmail1" class="form-label">মোবাইল নম্বর:</label>
+            <input class="form-control" type="tel" id="mobile" name="mobile_number" placeholder="মোবাইল নম্বর বলুন" required>
         </div>
         <h6 class="mt-5">সময় নির্ধারণ করুন</h6>
         <div class="form-check">
@@ -78,11 +48,12 @@
                 বিকাল ({{ $doctor->schedule_2 }}) টা
             </label>
         </div>
-        <button type="submit" class="submit-btn mt-5">সাবমিট করুন</button>
+        <button type="submit" class="btn btn-primary mt-3 mx-auto">সাবমিট করুন</button>
+
     </form>
 </div>
 <br>
-<footer class="bg-dark text-white text-center py-4">
+<footer class="bg-dark text-white text-center fixed-bottom">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -114,7 +85,7 @@
   </div>
 </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
 <script>
     function convertEnglishToBengaliNumber(number) {
         const englishNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
