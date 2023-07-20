@@ -134,7 +134,7 @@ class AppointmentControler extends Controller
     public function checkSerialNumber(Request $request)
     {
 
-     $serialNumbers = Appointment::with('doctor')->where('status', 1)
+     $serialNumbers = Appointment::with('doctor')
 
          ->where('mobile_number', $request->mobile_number)->get();
     //  $serialNumbers = Appointment::where('status', 1)->get();
