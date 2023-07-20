@@ -43,7 +43,7 @@
             </div>
         </div>
     </div> --}}
-    <h1 class="text-center mt-5 pt-5">Dashboard is comming soon!</h1>
+    {{-- <h1 class="text-center mt-5 pt-5">Dashboard is comming soon!</h1> --}}
  
 
 </div>

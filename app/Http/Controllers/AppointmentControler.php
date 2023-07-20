@@ -52,6 +52,16 @@ class AppointmentControler extends Controller
         }
         public function doctorPost(Request $request)
         {
+   
+            // $doctor_serial = Doctor
+            // // $serial = 3;
+            // // $serial1 = 6;
+            // if($serial == $serial1){
+            //     session()->put('serial', 'serial khali ace');
+            // } 
+            // else{
+            //     session()->put('serial', ' serial khali nai'); 
+            // }
             $searchTerm = $request->name;
             $keywords = explode(' ', $searchTerm);
         
@@ -101,11 +111,20 @@ class AppointmentControler extends Controller
     public function bookAppointmentStore(Request $request)
     {
         //  dd($request->all());
+        $doctor = Doctor::findOrFail($request->doctor_id);
+        // dd($serial);
+        $serial_no = $doctor->serial + 1;
+        $doctor->update([
+           "serial" => $doctor->serial + 1,
+
+        ]);
+
          Appointment::create([
             'patient_name' =>$request->patient_name,
             'mobile_number' =>$request->mobile_number,
             'schedule' =>$request->schedule,
             'doctor_id' =>$request->doctor_id,
+            'serial_no' => $serial_no,
 
         ]);
         Alert::success('আপনার অ্যাপোয়েন্টমেন্ট বুক করা হয়েছে!');

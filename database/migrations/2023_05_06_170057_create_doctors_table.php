@@ -21,6 +21,8 @@ class CreateDoctorsTable extends Migration
             $table->string('schedule_1')->nullable();
             $table->string('schedule_2')->nullable();
             $table->longText('keyword')->nullable();
+            $table->longText('serial_limit')->nullable();
+            $table->longText('serial')->nullable()->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
