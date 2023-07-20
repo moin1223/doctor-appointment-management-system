@@ -36,6 +36,7 @@ class DoctorController extends Controller
             'keyword' => $request->keyword,
             'schedule_1' => $request->schedule_1,
             'schedule_2' => $request->schedule_2,
+            'serial_limit' => $request->serial_limit,
 
         ]);
         Alert::success('Doctor Created Successfully.');
@@ -65,6 +66,7 @@ class DoctorController extends Controller
             'schedule_1' => $request->schedule_1,
             'schedule_2' => $request->schedule_2,
             'keyword' => $request->keyword,
+            'serial_limit' => $request->serial_limit,
 
 
         ]);

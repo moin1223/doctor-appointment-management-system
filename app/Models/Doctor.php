@@ -17,6 +17,8 @@ class Doctor extends Model
         'keyword',
         'schedule_1',
         'schedule_2',
+        'serial_limit',
+        'serial',  
     ];
     public function appointment()
     {

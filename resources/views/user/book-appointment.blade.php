@@ -48,7 +48,7 @@
                 বিকাল ({{ $doctor->schedule_2 }}) টা
             </label>
         </div>
-        <button type="submit" class="btn btn-primary mt-3 mx-auto">সাবমিট করুন</button>
+        <button type="submit" class="btn btn-primary mt-3 mx-auto">জমা দিন</button>
 
     </form>
 </div>

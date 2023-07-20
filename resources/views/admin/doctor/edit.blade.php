@@ -76,6 +76,16 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Serial limit </label>
+                        <input type="text" name="serial_limit" value="{{ $dataItem->serial_limit }}"
+                            class="form-control  @error('serial_limit') is-invalid @enderror">
+                        @error('serial_limit')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                 <div class="col-12">
                     <button type="submit" class="button mt-2">Update</button>
